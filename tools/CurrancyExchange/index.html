@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Currency Converter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <section>
+
+            <div class="converter-container">
+                <h1>Currency Exchange</h1>
+                <div class="input-container">
+                    <input type="number" value="1" min="1" class="ammount" />
+                    <select class="fromCurrency">
+                        <option></option>
+                    </select>
+                </div>
+
+                <div class="arrow">→</div>
+
+                <div class="input-container">
+                    <input type="number" class="convertedAmmount" disabled />
+                    <select class="toCurrency">
+                        <option></option>
+                    </select>
+                </div>
+
+                <div class="result">1 USD = 82 INR</div>
+
+            </div>
+
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

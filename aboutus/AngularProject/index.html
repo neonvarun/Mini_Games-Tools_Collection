@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Form to Email</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js"></script>
+</head>
+
+<body ng-app="myApp">
+    <!-- AngularJS container -->
+    <div class="container" ng-controller="FormController">
+        <!-- Form to collect survey data -->
+        <form ng-submit="sendEmail($event)">
+            <h3>Survey Form</h3>
+            <!-- Input fields for user details -->
+            <input type="text" id="name" placeholder="Your Name" ng-model="formData.name" required>
+            <input type="email" id="email" placeholder="Email id" ng-model="formData.email" required>
+            <input type="text" id="phone" placeholder="Phone no." ng-model="formData.phone" ng-pattern="/^\d{10}$/"
+                required>
+            <textarea id="message" rows="4" placeholder="How can we help you?" ng-model="formData.message"
+                ng-minlength="10" required></textarea>
+            <!-- Submit button triggers sendEmail function -->
+            <button type="submit">Send</button>
+        </form>
+        <!-- Success message popup -->
+        <div ng-show="showSuccess" class="success-popup">
+            <p>Form submitted successfully!</p>
+            <!-- Button to close the success popup -->
+            <button ng-click="reset(); closeSuccess()">Close</button>
+        </div>
+    </div>
+    <!-- External scripts -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

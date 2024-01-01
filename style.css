@@ -1,0 +1,130 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  transition: background-color 0.3s;
+  /* Add transition for a smooth effect */
+}
+
+.dark-mode {
+  background-color: #333;
+  /* Dark background color */
+  color: #fff;
+  /* Light text color */
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  background-color: #444;
+  padding: 0.5rem;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+li {
+  margin-right: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+section {
+  margin-bottom: 2rem;
+  flex: 1;
+  /* Distribute available space equally among sections */
+}
+
+main {
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.tile {
+  position: relative;
+  /* Set position to relative for child positioning */
+  cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  /* Hide overflow content if the image is larger than the tile */
+  transition: transform 0.3s;
+  box-sizing: border-box;
+  width: 500px;
+  height: 300px;
+  /* Set a fixed height for the tiles */
+}
+
+.tile p {
+  position: absolute;
+  /* Set position to absolute for text positioning */
+  bottom: 0;
+  /* Position the text at the bottom of the tile */
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 1rem;
+  background: rgb(158, 116, 116);
+}
+
+.tile img {
+  max-width: 100%;
+  /* Scale image proportionally within the width of the container */
+  max-height: 100%;
+  /* Scale image proportionally within the height of the container */
+  display: block;
+  margin: auto;
+  filter: blur(2px);
+  /* Adjust the blur value as needed */
+  /* Center the image within the container */
+}
+
+.tile:hover img {
+  filter: blur(0);
+  /* Remove blur on hover */
+}
+
+@media (max-width: 767px) {
+  .tile {
+    flex: 0 0 calc(50% - 1rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .tile {
+    flex: 0 0 100%;
+  }
+}
+
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+
+.tile:hover {
+  transform: scale(1.05);
+}
+
+#darkModeToggle {
+  margin-left: 0.5rem;
+}
