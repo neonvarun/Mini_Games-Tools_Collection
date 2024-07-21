@@ -27,10 +27,10 @@ app.controller('FormController', function ($scope, $timeout) {
         // Send email using SMTP
         Email.send({
             Host: "smtp.elasticemail.com",
-            Username: "thisistest36@gmail.com",
-            Password: "56E262B8DBE6A9146F7062A9016548F7E80C",
-            To: 'thisistest36@gmail.com',
-            From: "thisistest36@gmail.com",
+            Username: "abc@gmail.com",
+            Password: "abc",
+            To: 'abc.com',
+            From: "abc@gmail.com",
             Subject: "Enquiry",
             Body: "Name: " + $scope.formData.name +
                 "<br> Email: " + $scope.formData.email +
